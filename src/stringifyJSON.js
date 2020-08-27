@@ -11,18 +11,14 @@ var stringifyJSON = function(obj) {
     return 'null';
   } else if (typeof(obj) === 'string') {
     return quotes + obj + quotes;
-  } else if (Array.isArray(obj) && obj.length === 0) {
-    return '[]';
-  } else if (Array.isArray(obj) && obj.length > 0) {
+  } else if (Array.isArray(obj)) {
     var result = '[';
-    for (let i = 0; i < obj.length; i++) {
-      if (i === obj.length - 1) {
-        result += stringifyJSON(obj[i]);
-      } else {
-        result += stringifyJSON(obj[i]) + ',';
-      }
-    }
-    return result + ']';
+    _.forEach(obj, function(item) {
+      result += stringifyJSON(item) + ',';
+    });
+    if (result.length > 2) {
+      return result.slice(0, -1) + ']';
+    } else { return result + ']'; }
   } if (typeof(obj) === 'object') {
     var result = '{';
     var objectLength = Object.keys(obj).length - 1;
