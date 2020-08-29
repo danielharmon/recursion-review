@@ -43,12 +43,6 @@ var parseJSON = function (json) {
     }
     //input is Object
 
-    // {
-    //   sandwich: 'turkey',
-    //   drink: 'soda',
-    //   chips: true
-    // };
-
     if (startChar === "{") {
       var result = {};
       if (nextChar(json, true) === "}") {
