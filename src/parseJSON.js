@@ -5,4 +5,5 @@
 var parseJSON = function (json) {
   // your code goes here
   console.log('Hello world!');
+  console.log('Push to pair test');
 };
