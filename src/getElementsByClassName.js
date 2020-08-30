@@ -8,13 +8,6 @@ var getChildrenByClassName = function(elements, targetClassName, returnResult) {
     if (elem.hasChildNodes()) {
       getChildrenByClassName(elem.childNodes, targetClassName, returnResult);
     }
-
-
-    // if (elem.children.length !== undefined) {
-    //   if (elem.children.length > 0) {
-    //     getChildrenByClassName(elem.childNodes, targetClassName, returnResult);
-    //   }
-    // }
   });
 };
 
